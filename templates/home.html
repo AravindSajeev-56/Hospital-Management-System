@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<head>
+<title>home</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:lightblue;
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: left;
+  padding: 16px 16px;
+  text-decoration:none;
+}
+.active{
+    text-decoration: whitesmoke;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <h2 style="text-align: center; color: red;">AS Hospital 🏥</h2>
+        <li><a class="active" href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'booking'%}">Booking</a></li>
+        <li><a href="{% url 'virtualdoctor'%}">Virtual Doctors</a></li>
+        <li><a href="{% url 'aidoctor'%}">AI Doctor</a></li>
+        <li><a href="{% url 'department'%}">Departments</a></li>
+        <li><a href="{% url 'doctors'%}">Doctors</a></li>
+        <li><a href="{% url 'ourhospital'%}">Our Hospital</a></li>
+        <li><a href="{% url 'about'%}">About</a></li> <br><br>
+        <form action="logout">
+        <input type="submit" value="signout" style="background-color:#f4511e; color:white; margin-left: 90%; text-align: right; font-size: 20px;" >
+    </form>
+    </ul>
+<marquee width="100%" direction="right" height="30px" bgcolor="lightgray">
+    | Ambulance - 9564863158 | Appointment - 8651249658 | Information 24/7 - 9645321854 | Health Check-Up Plans - 8645219657 | 
+    </marquee>
+<div>
+  <img src="{%static '/image1.png'%}" alt="hospital..." width="1500" height="500">
+</div>
+<marquee width="100%" direction="right" height="30px" bgcolor="lightgray">
+    | Visiting Hours - Morining : 7.00 am - 12:00 pm | At Noon  : 12:00 pm - 5:00 pm | Evening  : 6:00 pm - 7 pm |
+</marquee> 
+<div>
+  <img src="{%static '/image3.png'%}" alt="hospital..." width="1500" height="500">
+</div>
+<br>
+<h2 style="color: brown; text-align: center;"><b>Thriving Through Balance: Embrace the Journey to Holistic Health<b></h2><br>
+  <p style="padding: 1%;"><b>Health is a multidimensional concept that encompasses physical, mental, and social well-being. It’s more than just the absence of disease; it’s a state of complete balance and harmony within the body and mind. Good health empowers 
+    individuals to lead fulfilling lives, engaging actively in work, leisure, and relationships. It is influenced by various factors, including genetics, lifestyle choices, environmental conditions, and access to healthcare services. Prioritizing health through nutritious diets, regular exercise,
+    mental health care, and preventive measures can significantly enhance one’s quality of life, allowing individuals to thrive and achieve their fullest potential.Health is the foundation of a vibrant and fulfilling life, encompassing the physical, mental, and emotional aspects that contribute to our overall well-being.
+    It allows individuals to perform daily activities with energy and vitality, maintain positive relationships, and cope with the stresses of life. Good health is achieved through a balanced diet, regular physical activity, adequate sleep, and mindfulness practices that nurture the mind. It also involves proactive healthcare measures such as regular check-ups and vaccinations to prevent illness. Ultimately,
+    health is a dynamic and continuous journey, one that empowers individuals to live life to its fullest.Maintaining good health is essential for leading a happy and productive life. It serves as the bedrock for all activities, allowing individuals to pursue their goals and dreams with energy and vigor. Good health involves a delicate balance of proper nutrition, regular physical activity, sufficient sleep, and mental well-being. It also requires preventive measures, such as vaccinations and regular medical check-ups, to catch potential issues early. By prioritizing health, individuals can enhance their quality of life, improve their resilience, and 
+    foster a sense of well-being that extends to their personal and professional relationships.</b></p>
+<br>
+<br>
+<br>
+</body>
+</html>

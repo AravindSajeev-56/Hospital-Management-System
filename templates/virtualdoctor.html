@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Doctor</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: lightblue;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: left;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        .active {
+            text-decoration: whitesmoke;
+        }
+
+        input[type=text], input[type=email], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <h2 style="text-align: center; color: red;">AS Hospital 🏥</h2>
+        <li><a class="active" href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'booking'%}">Booking</a></li>
+        <li><a href="{% url 'virtualdoctor' %}">Virtual Doctors</a></li>
+        <li><a href="{% url 'aidoctor' %}">AI Doctor</a></li>
+        <li><a href="{% url 'department' %}">Departments</a></li>
+        <li><a href="{% url 'doctors' %}">Doctors</a></li>
+        <li><a href="{% url 'ourhospital' %}">Our Hospital</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
+
+    <h1 style="text-align: center; color: brown;">Expert Medical Advice at Your Fingertips</h1>
+    <p style="padding: 2%;"><b>Discover the future of healthcare with our Virtual Doctor service. Receive personalized medical advice from the comfort of your home. No more long waits or travel hassles—consult with top doctors online. Your health is our priority, anytime, anywhere.</b></p>
+    <div>
+        <form method="post" action="virtualdoctor" style="margin: 2%;"> 
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="hari">
+      
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" placeholder="20">
+      
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="123456789">
+      
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="abc@gmail.com">
+      
+            <label for="department">Department</label>
+            <select id="department" name="department">
+                <option></option>
+                <option value="anaesthesiology">Anaesthesiology</option>
+                <option value="neonatology">Neonatology</option>
+                <option value="ophthalmology">Ophthalmology</option>
+                <option value="general Medicine">General Medicine</option>
+            </select>
+      
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br><br><br>
+{{msg1}}
+</body>
+</html>

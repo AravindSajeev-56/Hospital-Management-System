@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+<title>sign up</title>
+<style>
+  hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:lightblue;
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: left;
+  padding: 16px 16px;
+  text-decoration:none;
+}
+.active{
+    text-decoration: whitesmoke;
+}
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+input[type=submit] {
+  opacity: 0.8;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+  </style>
+</head>
+<body>
+    <ul>
+        <h1 style="text-align: center; color: red;">AS Hospital 🏥</h1>
+    </ul>
+<h1 style="text-align: center; color: brown;">Create Your Profile </h1>
+<hr>
+<marquee width="100%" direction="right" height="30px" bgcolor="lightblue">
+    Please Provide Valid Details Only....   
+  </marquee>
+<hr>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+        <input type="submit" value="signup">
+</form>

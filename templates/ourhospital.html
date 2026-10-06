@@ -1,0 +1,73 @@
+{%load static%}
+<!DOCTYPE html>
+<head>
+<title>our hospital</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:lightblue;
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: left;
+  padding: 16px 16px;
+  text-decoration:none;
+}
+.active{
+    text-decoration: whitesmoke;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <h2 style="text-align: center; color: red;">AS Hospital 🏥</h2>
+        <li><a class="active" href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'booking'%}">Booking</a></li>
+        <li><a href="{% url 'virtualdoctor'%}">Virtual Doctors</a></li>
+        <li><a href="{% url 'aidoctor'%}">AI Doctor</a></li>
+        <li><a href="{% url 'department'%}">Departments</a></li>
+        <li><a href="{% url 'doctors'%}">Doctors</a></li>
+        <li><a href="{% url 'ourhospital'%}">Our Hospital</a></li>
+        <li><a href="{% url 'about'%}">About</a></li> <br><br>
+    </ul>
+    <div style="background-color: white;">
+    <h1 style="text-align: center; color: brown;">Compassionate Care, Medical Excellence.</h1>
+    <p style="padding: 2%;"><b>Explore our network of exceptional healthcare institutions committed to providing compassionate and comprehensive medical services. Each hospital shares our dedication to patient well-being, cutting-edge treatments, and a patient-centric approach.</b></p><br>
+    {%for i in doctkey%}
+    <div class="card" style="margin-left:35.99%; background-color: white;">
+      <img src="{{i.hos_img.url}}" alt="loading" style="width:250px">
+      <div class="container">
+        <h2 class="card-title">{{i.hos_name}}</h2>
+        <p style="font-size: larger;" class="card-text">{{i.hos_des}}</p>
+      </div>
+    </div>
+  {%endfor%}
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

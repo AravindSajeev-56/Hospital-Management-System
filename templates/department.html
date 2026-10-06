@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<head>
+<title>department</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:lightblue;
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: left;
+  padding: 16px 16px;
+  text-decoration:none;
+}
+.active{
+    text-decoration: whitesmoke;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <h2 style="text-align: center; color: red;">AS Hospital 🏥</h2>
+        <li><a class="active" href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'booking'%}">Booking</a></li>
+        <li><a href="{% url 'virtualdoctor'%}">Virtual Doctors</a></li>
+        <li><a href="{% url 'aidoctor'%}">AI Doctor</a></li>
+        <li><a href="{% url 'department'%}">Departments</a></li>
+        <li><a href="{% url 'doctors'%}">Doctors</a></li>
+        <li><a href="{% url 'ourhospital'%}">Our Hospital</a></li>
+        <li><a href="{% url 'about'%}">About</a></li> <br><br>
+    </ul>
+
+<h1 style="text-align: center; color: brown;">Our Speciality</h1>
+<p style="padding: 2%;"><b>We are home to 43 broad specialities with the best-in-the country healthcare professionals whose motto is to treat a patient's ailment and help them to get back to their daily life in the best and fastest possible way </b></p><br>
+{%for i in deptkey%}
+<div class="mx-auto w-50 bg-success text-center text-white" style="margin:2%; background: lightgray;">
+    <h1>{{i.dep_name}}</h1>
+    <p>{{i.dep_description}}</p>
+</div>
+    
+ {%endfor%}
+    <br>
+    <br>
+    <br>
+</body>
+</html>

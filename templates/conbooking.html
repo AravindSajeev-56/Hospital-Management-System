@@ -1,0 +1,69 @@
+{%load static%}
+<!DOCTYPE html>
+<head>
+<title>booking</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:lightblue;
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: left;
+  padding: 16px 16px;
+  text-decoration:none;
+}
+.active{
+    text-decoration: whitesmoke;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <h2 style="text-align: center; color: red;">AS Hospital 🏥</h2>
+        <li><a class="active" href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'booking'%}">Booking</a></li>
+        <li><a href="{% url 'virtualdoctor'%}">Virtual Doctors</a></li>
+        <li><a href="{% url 'aidoctor'%}">AI Doctor</a></li>
+        <li><a href="{% url 'department'%}">Departments</a></li>
+        <li><a href="{% url 'doctors'%}">Doctors</a></li>
+        <li><a href="{% url 'ourhospital'%}">Our Hospital</a></li>
+        <li><a href="{% url 'about'%}">About</a></li> <br><br>
+    </ul>
+
+<h1 style="text-align: center; color: brown;">Booking Details</h1>
+<div style="padding: 2%;">
+      <label>Booking Status : {{msg1}}</label><br><br>
+
+      <label>Name : {{output1}}</label><br><br>
+      
+      <label>Age : {{output2}}</label><br><br>
+
+      <label>Place : {{output3}}</label><br><br>
+      
+      <label>Phone Number : {{output4}}</label><br><br>
+
+      <label>Department : {{output6}}</label><br><br>
+
+      <label>Doctor : {{output7}}</label><br><br>
+
+      <label>Date : {{output8}}</label><br><br>
+
+      <label>Time : 10:00 am to 12:30 pm</label><br><br>
+
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>
